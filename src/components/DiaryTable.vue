@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <div class="card mb-4">
+  <div class="card mb-4 h-100">
     <div class="card-body">
       <div class="border-bottom">
         <p class="card-title">{{ dateFormat(detail.tanggal) }}</p>
