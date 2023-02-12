@@ -1,0 +1,9 @@
+@import './variables';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import './bootstrap-custom';
+
+html, body {
+  font-size: 14px;
+  max-width: 100vw;
+  overflow-x: hidden;
+}

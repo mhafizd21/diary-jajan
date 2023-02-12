@@ -1,0 +1,33 @@
+// Table
+.table {
+  tr {
+    &:last-child td {
+      border-bottom: 0;
+      font-weight: 600;
+    }
+    &:nth-last-child(2) td {
+      border-bottom-width: 2px;
+    }
+    td {
+      font-size: 14px;
+    }
+  }
+}
+
+// Button
+.btn {
+  border-radius: 2px;
+}
+
+.btn-primary {
+  @include button-variant($brand-primary, white);
+}
+
+// Card
+.card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card-title {
+  font-weight: 600;
+}
