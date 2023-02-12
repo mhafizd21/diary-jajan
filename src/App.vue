@@ -17,6 +17,7 @@
 
   let modalObj: Modal;
 
+  // Grouping Item per date
   const groupedItems = computed(() => {
     return items.value?.reduce((acc, curr) => {
       const dateIndex = acc?.findIndex(item => item.tanggal === curr.tanggal);
@@ -37,10 +38,11 @@
         ]
       }
       return [...acc];
-      // expected => [{ tanggal: 1 jan, data: JajanDetail[] }]
-    }, [] as GroupedJajanDetail[])?.sort((a, b) => {
-      return new Date(b.tanggal).valueOf() - new Date(a.tanggal).valueOf();
-    });
+    }, [] as GroupedJajanDetail[])
+      // Sorting by date desc
+      ?.sort((a, b) => {
+        return new Date(b.tanggal).valueOf() - new Date(a.tanggal).valueOf();
+      });
   });
 
   const totalSpendingMonthly = computed(() => {
@@ -79,10 +81,11 @@
         'http://localhost:3000/detail',
         { ...params }
       )
-        .then(res => {
+        .then(() => {
           closeModal();
           getDataApi();
-        });
+        })
+        .catch(error => console.log(error));
     }
   }
 
